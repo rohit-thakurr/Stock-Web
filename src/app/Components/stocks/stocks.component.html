@@ -1,0 +1,44 @@
+<div class="main-div">
+    <div class="heading">
+        <div class="heading-items">
+            <input type="text" placeholder="Search Stocks" />    
+             <select class="filter" #filter (click)="filterFunction(filter.value)" [ngModel]="filterType"> 
+                        <option default>{{filterType}}</option>
+                        <option *ngFor="let sort of sortList" >{{sort}}</option>
+            </select>
+           <div class="sort-stocks">
+                <button class="ascen" (click)="sortFunction('ascending')"> <fa-icon [icon]="faArrowUp"  [ngStyle]="{'color': sortType === 'ascending' ? 'green' : 'black'}"></fa-icon> </button>   
+                <button  class="desc" (click)="sortFunction('descending')"> <fa-icon [icon]="faArrowDown" [ngStyle]="{'color': sortType === 'descending' ? 'red' : 'black' }"></fa-icon> </button>  
+            </div>
+        </div>       
+    
+    </div>
+
+     <div class="temp"></div>
+
+     <div class="stocks-div">
+         <ng-container *ngFor="let AllStock of StocksList;  let i = index">
+                     <div class="info">
+                        <div class="info-head">
+                            <div class="info-name">{{i+1}}. {{ AllStock?.symbol.charAt(0).toUpperCase() + AllStock?.symbol.slice(1).toLowerCase()}}</div>
+                        </div>
+                        <div class="info-body">
+                            <div class="price" >
+                                <fa-icon [icon]="faRupeeSign" ></fa-icon>
+                                {{AllStock?.lastPrice}}
+                            </div>
+                            <div class="change"  [ngStyle]="{'color': AllStock?.pChange > 0 ? 'green' : 'red'}" >
+                                <fa-icon [icon]="faArrowUp" *ngIf="AllStock?.pChange > 0" ></fa-icon>
+                                <fa-icon [icon]="faArrowDown" *ngIf="AllStock?.pChange < 0" ></fa-icon>
+                                {{AllStock?.change | number:'1.2-2'}} ({{AllStock?.pChange}}%)
+                            </div>
+                            <div class="mkt">
+                                Market Cap: {{AllStock?.totalTradedValue | toBillion}}
+                            </div>
+                        </div>
+                     </div>
+                </ng-container>
+     </div>
+
+     
+</div>

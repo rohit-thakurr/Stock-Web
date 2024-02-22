@@ -3,16 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainComponent } from './Components/main/main.component';
+import { NavComponent } from './Components/nav/nav.component';
+import { HomeComponent } from './Components/home/home.component';
+import { ErrorComponent } from './Components/error/error.component';
+import { StocksComponent } from './Components/stocks/stocks.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewsComponent } from './Components/news/news.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToBillionPipe } from './Pipes/to-billion.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    NavComponent,
+    HomeComponent,
+    ErrorComponent,
+    StocksComponent,
+    NewsComponent,
+    ToBillionPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

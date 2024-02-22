@@ -1,0 +1,202 @@
+.main-Div{
+    max-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.heading {
+    height: 10vh;
+    font-size: 2rem;
+    border-bottom: 1px solid rgb(229, 228, 226);
+    background-color: rgb(229, 228, 226);
+    position: fixed;
+    top: 0;
+    left: 21.1%;
+    width: 100%;
+    z-index: 1000;
+}
+
+.temp {
+    height: 10vh;
+    min-height: 10vh;
+    background-color: rgb(229, 228, 226);
+}
+
+.heading-title{
+    width: 30%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0,0,0,0.8);
+}
+
+.stats{
+    height: 40vh;
+    min-height: 40vh;
+    background-color: rgb(229, 228, 226,0.6);
+}
+
+.stats-row{
+    height: 10vh;
+    min-height: 10vh;
+    margin-top: 2vh;
+    margin-left: 8%;
+    margin-right: 8%;
+
+    display: flex;
+    box-sizing: border-box;
+}
+
+.stats-col{
+    width: 50%;
+    height: 100%;
+}
+
+.col-title{
+    color: grey;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem ;
+}
+
+.col-value{
+    font-size: 1.45rem;
+    font-weight: 400;
+}
+
+.stocks{
+    height: 50vh;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(229, 228, 226, 0.6);
+   
+}
+
+
+
+.stocks-head {
+    height: 8vh;
+    min-height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    background-color: rgb(229, 228, 226, 0.1);
+}
+
+.stocks-head > div{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6%;
+}
+
+.stocks-desc {
+    margin-right: 6%;
+}
+
+.stocks-desc  a{
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(16, 149, 202);
+}
+
+.stocks-desc a:hover{
+    color: rgba(67, 192, 192);
+}
+
+.stocks-title {
+    font-weight: 500;
+}
+
+.stocks-body {
+    height: 42vh;
+    max-height: 42vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.stocks-info {
+    height: 35vh;
+    min-width: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+
+
+
+.stocks-info::-webkit-scrollbar {
+    display: none;
+}
+
+.info:hover {
+   // box-shadow: 1px 1px 3px -0.5px rgba(0, 0, 0, 0.5);
+   border: 2px solid rgb(229, 228, 226);
+}
+
+.info {
+    height: 100%;
+    min-width: 23.7%;
+    width: 23.7%;
+    margin-right: 1.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: rgb(255,255,255,0.8);
+    color: rgb(0,0,0,0.7);
+    border-radius: 7px;
+}
+
+.info-head{
+   height: 10vh;
+   width: 100%;
+   border-bottom: 1px solid rgb(229, 228, 226); 
+   color: black;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding-left: 1.2rem;
+   box-sizing: border-box;
+}
+
+
+
+.info-name{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.info-body {
+    height: 22vh;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-body > div {
+    height: 5vh;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+

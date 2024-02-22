@@ -1,0 +1,23 @@
+
+.home {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+app-nav {
+    height: 100vh;
+    max-height: 100vh;
+    width: 21%;
+    box-sizing: border-box;
+}
+
+.main {
+    max-height: 100vh;
+    height: 100vh;
+    width: 79%;
+    border: 1px solid grey
+}
