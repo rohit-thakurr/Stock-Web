@@ -13,6 +13,7 @@ import { NewsComponent } from './Components/news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToBillionPipe } from './Pipes/to-billion.pipe';
 import { FormsModule } from '@angular/forms';
+import { NiftyComponent } from './Components/nifty/nifty.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     StocksComponent,
     NewsComponent,
     ToBillionPipe,
+    NiftyComponent,
   ],
   imports: [
     BrowserModule,
