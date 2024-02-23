@@ -193,7 +193,30 @@
     font-weight: 500;
 }
 
+.btn-right {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.arrow-left {
+    font-size: 1.5rem;
+}
+
+.arrow-left:hover {
+    color: rgb(0, 21, 41);
+}
+
+.arrow-right {
+    font-size: 1.5rem;
+}
+
+.arrow-right:hover {
+    color:rgb(0, 21, 41);
+}
 
 
 

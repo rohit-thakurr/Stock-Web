@@ -49,7 +49,8 @@
         </div>
 
         <div class="stocks-body" >
-            <div class="stocks-info">
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(BestStocks)" ></fa-icon></div>
+            <div class="stocks-info" #BestStocks>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -70,7 +71,8 @@
                         </div>
                      </div>
                 </ng-container>               
-            </div>                  
+            </div>   
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(BestStocks)"></fa-icon></div>               
         </div>
     
     </div>
@@ -84,7 +86,8 @@
         </div>
 
         <div class="stocks-body" >
-            <div class="stocks-info">
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(LossStocks)" ></fa-icon></div>
+            <div class="stocks-info" #LossStocks>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -105,7 +108,8 @@
                         </div>
                      </div>
                 </ng-container>               
-            </div>                  
+            </div>    
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(LossStocks)"></fa-icon></div>                             
         </div>
     
     </div>
@@ -119,7 +123,8 @@
         </div>
 
         <div class="stocks-body" >
-            <div class="stocks-info">
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(BestNifty)" ></fa-icon></div>
+            <div class="stocks-info" #BestNifty>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -141,7 +146,8 @@
                         </div>
                      </div>
                 </ng-container>               
-            </div>                  
+            </div>    
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(BestNifty)"></fa-icon></div>                             
         </div>
 
         
@@ -157,7 +163,8 @@
         </div>
 
         <div class="stocks-body" >
-            <div class="stocks-info">
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(LossNifty)" ></fa-icon></div>
+            <div class="stocks-info" #LossNifty>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -179,7 +186,8 @@
                         </div>
                      </div>
                 </ng-container>               
-            </div>                  
+            </div> 
+            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(LossNifty)"></fa-icon></div>                                
         </div>
 
         

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { StocksService } from 'src/app/Services/stocks.service';
-import {  faRupeeSign, faIndianRupee, faArrowDown, faArrowUp} from '@fortawesome/free-solid-svg-icons';
+import { faIndianRupee, faArrowDown, faArrowUp,  faAngleDoubleLeft, faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,6 +13,8 @@ export class MainComponent implements OnInit {
   faRupeeSign = faIndianRupee;
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
+  faAngleDoubleLeft = faAngleDoubleLeft;
+  faAngleDoubleRight = faAngleDoubleRight;
 
   Beststock: any[] = [];
   WorstStock: any[] = [];
@@ -22,7 +24,6 @@ export class MainComponent implements OnInit {
   constructor(private stockService: StocksService) {}
   ngOnInit() {
     this.stockService.getStocks().subscribe(async (data) => {
-      //console.log(data[0]);
       data.sort((a, b) => a.pChange - b.pChange);
       this.Beststock = data;
       data.reverse();
@@ -37,5 +38,13 @@ export class MainComponent implements OnInit {
       this.Nifty50 = data;
       this.WorstNifty50 = [...data].reverse();
     } )
+  }
+
+  scrollLeft(ele : HTMLElement) {
+    ele.scrollLeft -= 100;
+  }
+
+  scrollRight(ele : HTMLElement){
+    ele.scrollLeft += 100;
   }
 }
