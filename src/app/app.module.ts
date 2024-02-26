@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToBillionPipe } from './Pipes/to-billion.pipe';
 import { FormsModule } from '@angular/forms';
 import { NiftyComponent } from './Components/nifty/nifty.component';
+import { OverviewComponent } from './Components/overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NiftyComponent } from './Components/nifty/nifty.component';
     NewsComponent,
     ToBillionPipe,
     NiftyComponent,
+    OverviewComponent,
   ],
   imports: [
     BrowserModule,

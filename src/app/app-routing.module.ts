@@ -6,6 +6,7 @@ import { MainComponent } from './Components/main/main.component';
 import { StocksComponent } from './Components/stocks/stocks.component';
 import { NewsComponent } from './Components/news/news.component';
 import { NiftyComponent } from './Components/nifty/nifty.component';
+import { OverviewComponent } from './Components/overview/overview.component';
 
 const routes: Routes = [
   { path : 'home', 
@@ -15,6 +16,7 @@ const routes: Routes = [
       {path: 'stocks', component: StocksComponent},
       {path: 'nifty', component: NiftyComponent},
       {path: 'news', component: NewsComponent},
+      {path: 'overview', component: OverviewComponent},
       {path: '', redirectTo:'main', pathMatch: 'full'}
   ] },
 

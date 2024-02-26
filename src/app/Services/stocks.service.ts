@@ -37,6 +37,22 @@ export class StocksService {
     });
   }
 
+  getHistory() {
+    const headers = new HttpHeaders()
+      .set(
+        'X-RapidAPI-Key',
+        'b857b495b1mshc0678b0f3d55d62p178542jsn75927ebb5c45'
+      )
+      .set('X-RapidAPI-Host', 'nse-market.p.rapidapi.com');
+
+    const params = new HttpParams().set('symbol', 'itc');
+
+    return this.http.get<any>('https://nse-market.p.rapidapi.com/stocks', {
+      headers,
+      params,
+    });
+  }
+
   getStocks() {
     const headers = new HttpHeaders()
       .set(
