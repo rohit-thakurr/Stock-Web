@@ -3,6 +3,7 @@ import {
   faIndianRupee,
   faArrowDown,
   faArrowUp,
+  faDollarSign
 } from '@fortawesome/free-solid-svg-icons';
 import { StocksService } from 'src/app/Services/stocks.service';
 import { ActivatedRoute } from '@angular/router';
@@ -18,6 +19,7 @@ export class CryptoComponent {
   faRupeeSign = faIndianRupee;
   faArrowUp = faArrowUp;
   faArrowDown = faArrowDown;
+  faDollarSign = faDollarSign;
 
   filterType: string = 'Filter By';
   currType: string = 'All';
@@ -26,20 +28,17 @@ export class CryptoComponent {
   sortType: string = '';
   numberOfTimesSort : number = 0;
 
-  AllStocks: any[] = [];
-  ProfitStocks: any[] = [];
-  LossStocks: any[] = [];
-  StocksList: any[] = [];
+  
 
-  cryptos: any[] = [];
+  
+  AllCryptos: any[] = [];
+  ProfitCryptos: any[] = [];
+  LossCryptos: any[] = [];
+  CryptosList: any[] = [];
+
 
   constructor(private stockService: StocksService, private route: ActivatedRoute) {}
   ngOnInit() {
-    this.stockService.getStocks().subscribe(async (data) => {
-      this.AllStocks = data;
-      this.StocksList = data;
-      console.log(this.AllStocks);
-    });
 
      this.route.queryParams.subscribe((params) => {
        const value = params['key'];
@@ -49,8 +48,9 @@ export class CryptoComponent {
      });
 
      this.stockService.getCryptos().subscribe(async (data) => {
-      this.cryptos = data;
-      console.log(this.cryptos);
+      this.AllCryptos = data.data.coins;
+      this.CryptosList = this.AllCryptos;
+      console.log(this.AllCryptos);
      })
   }
 
@@ -59,31 +59,32 @@ export class CryptoComponent {
     this.currType = val;
 
     if (val == 'All') {
-      this.StocksList = this.AllStocks;
+      this.CryptosList = this.AllCryptos;
     } else if (val == 'Profit') {
-      if (this.ProfitStocks.length == 0) {
-        this.ProfitStocks = this.AllStocks.filter((stock) => {
-          return stock.pChange > 0;
+      if (this.ProfitCryptos.length == 0) {
+        this.ProfitCryptos = this.AllCryptos.filter((crypto) => {
+          return crypto.change > 0;
         });
       }
-      this.StocksList = this.ProfitStocks;
-      console.log(this.StocksList);
+      this.CryptosList = this.ProfitCryptos;
+      console.log(this.CryptosList);
     } else if (val == 'Loss') {
-      if (this.LossStocks.length == 0) {
-        this.LossStocks = this.AllStocks.filter((stock) => {
-          return stock.pChange < 0;
+      if (this.LossCryptos.length == 0) {
+        this.LossCryptos = this.AllCryptos.filter((crypto) => {
+          return crypto.change < 0;
         });
       }
-      this.StocksList = this.LossStocks;
+      this.CryptosList = this.LossCryptos;
     }
   }
 
   sortFunction(type: string) {
     this.sortType = type;
-    if(this.sortType == 'ascending' && this.numberOfTimesSort != 0){
-      this.StocksList = [...this.StocksList].reverse();
-    }else{
-      this.StocksList = [...this.StocksList].reverse();
+    if(this.sortType == 'ascending' ){
+      //this.CryptosList = [...this.CryptosList].reverse();
+      this.CryptosList.sort((a, b) => a.change - b.change);
+    }else if((this.sortType == 'descending' ) ){
+      this.CryptosList.sort((a, b) => b.change - a.change);
     }
   }
 }

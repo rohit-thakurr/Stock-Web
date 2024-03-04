@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { StocksService } from 'src/app/Services/stocks.service';
-import { faIndianRupee, faArrowDown, faArrowUp,  faAngleDoubleLeft, faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
+import { faIndianRupee, faArrowDown, faArrowUp,  faAngleDoubleLeft, faAngleDoubleRight, faDollarSign} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   faArrowDown = faArrowDown;
   faAngleDoubleLeft = faAngleDoubleLeft;
   faAngleDoubleRight = faAngleDoubleRight;
+  faDollarSign = faDollarSign;
 
   Beststock: any[] = [];
   WorstStock: any[] = [];
@@ -23,37 +24,37 @@ export class MainComponent implements OnInit {
 
   cryptosStats: any ;
   coinsList: any[] = [];
+  BestCrypto: any[]=[];
+  WorstCrypto: any[]=[];
 
   constructor(private stockService: StocksService) {}
   ngOnInit() {
-    this.stockService.getStocks().subscribe(async (data) => {
-      data.sort((a, b) => a.pChange - b.pChange);
-      this.Beststock = data;
-      data.reverse();
-      this.WorstStock = [...data].reverse();
+    // this.stockService.getStocks().subscribe(async (data) => {
+    //   data.sort((a, b) => a.pChange - b.pChange);
+    //   this.Beststock = data;
+    //   data.reverse();
+    //   this.WorstStock = [...data].reverse();
+    // });
 
-      console.log(this.Beststock);
-      console.log(this.WorstStock);
-    });
-
-    this.stockService.getNifty().subscribe(async (data) => {
-      console.log(data);
-      this.Nifty50 = data;
-      this.WorstNifty50 = [...data].reverse();
-    } )
+    // this.stockService.getNifty().subscribe(async (data) => {
+    //   console.log(data);
+    //   this.Nifty50 = data;
+    //   this.WorstNifty50 = [...data].reverse();
+    // } )
 
     this.stockService.getCryptos().subscribe(async (data) => {
       this.cryptosStats = data;
       this.coinsList = data.data.coins;
-      console.log(this.coinsList);
+      //console.log(this.coinsList);
 
       this.coinsList.sort((a, b) => a.change - b.change);
-      this.Beststock = data;
-      data.reverse();
-      this.WorstStock = [...data].reverse();
+      //console.log(this.coinsList);
+      this.BestCrypto = this.coinsList;
+      this.coinsList.reverse();
+      this.WorstCrypto = [...this.coinsList].reverse();
 
-      console.log(this.Beststock);
-      console.log(this.WorstStock);
+      // console.log(this.BestCrypto);
+      // console.log(this.WorstCrypto);
      })
   }
 

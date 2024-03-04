@@ -1,26 +1,49 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%
-}
-
-.error-container {
+.error {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    height: 100%;
+    justify-content: center;
 }
-
-.error-content {
+  .error-container {
+    height: 100vh;
+    width: 70%;
+    background-image: url('https://images.unsplash.com/photo-1605792657660-596af9009e82?q=80&w=1402&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: contain;
+    background-repeat: no-repeat;
     text-align: center;
-}
+  }
 
-h1 {
-    font-size: 3em;
-    color: #333;
-}
+  .error-code {
+    font-size: 10rem;
+    color: rgb(245, 231, 156,0.5);
+    margin: 0;
+  }
 
-p {
-    font-size: 1.2em;
-    color: #666;
-}
+  .error-message {
+    font-size: 1.5rem;
+    color: white;
+    margin: 20px 0;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    background-color: rgb(119, 104, 20);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #2980b9;
+  }
+
+  #dog-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }

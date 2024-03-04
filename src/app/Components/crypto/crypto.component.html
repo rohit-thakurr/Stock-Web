@@ -17,23 +17,26 @@
      <div class="temp"></div>
 
      <div class="crypto-div">
-         <ng-container *ngFor="let AllStock of StocksList;  let i = index">
+         <ng-container *ngFor="let AllStock of CryptosList;  let i = index">
                      <div class="info">
                         <div class="info-head">
-                            <div class="info-name">{{i+1}}. {{ AllStock?.symbol.charAt(0).toUpperCase() + AllStock?.symbol.slice(1).toLowerCase()}}</div>
+                            <div class="info-name">{{i+1}}. {{ AllStock?.name.charAt(0).toUpperCase() + AllStock?.name.slice(1).toLowerCase()}}</div>
+                            <div class="crypto-img"><img [src]="AllStock?.iconUrl"/></div>
                         </div>
                         <div class="info-body">
                             <div class="price" >
-                                <fa-icon [icon]="faRupeeSign" ></fa-icon>
-                                {{AllStock?.lastPrice}}
+                                <span>Price: </span>
+                                <fa-icon [icon]="faDollarSign" ></fa-icon>
+                                {{AllStock?.price | number:'1.3-7'}}
                             </div>
-                            <div class="change"  [ngStyle]="{'color': AllStock?.pChange > 0 ? 'green' : 'red'}" >
-                                <fa-icon [icon]="faArrowUp" *ngIf="AllStock?.pChange > 0" ></fa-icon>
-                                <fa-icon [icon]="faArrowDown" *ngIf="AllStock?.pChange < 0" ></fa-icon>
-                                {{AllStock?.change | number:'1.2-2'}} ({{AllStock?.pChange}}%)
+                            <div class="change"  [ngStyle]="{'color': AllStock?.change > 0 ? 'green' : 'red'}" >
+                                <span style="color: rgb(0,0,0,0.7);">Daily Change:  </span>
+                                <fa-icon [icon]="faArrowUp" *ngIf="AllStock?.change > 0" ></fa-icon>
+                                <fa-icon [icon]="faArrowDown" *ngIf="AllStock?.change < 0" ></fa-icon>
+                                {{AllStock?.change | number:'1.2-2'}}%
                             </div>
                             <div class="mkt">
-                                Market Cap: {{AllStock?.totalTradedValue | toBillion}}
+                                Market Cap: {{AllStock?.marketCap | toBillion}}
                             </div>
                         </div>
                      </div>
