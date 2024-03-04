@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  faRupeeSign,
   faIndianRupee,
   faArrowDown,
   faArrowUp,
@@ -10,11 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-nifty',
-  templateUrl: './nifty.component.html',
-  styleUrls: ['./nifty.component.scss']
+  selector: 'app-crypto',
+  templateUrl: './crypto.component.html',
+  styleUrls: ['./crypto.component.scss']
 })
-export class NiftyComponent {
+export class CryptoComponent {
   items: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   faRupeeSign = faIndianRupee;
   faArrowUp = faArrowUp;
@@ -32,9 +31,11 @@ export class NiftyComponent {
   LossStocks: any[] = [];
   StocksList: any[] = [];
 
+  cryptos: any[] = [];
+
   constructor(private stockService: StocksService, private route: ActivatedRoute) {}
   ngOnInit() {
-    this.stockService.getNifty().subscribe(async (data) => {
+    this.stockService.getStocks().subscribe(async (data) => {
       this.AllStocks = data;
       this.StocksList = data;
       console.log(this.AllStocks);
@@ -46,6 +47,11 @@ export class NiftyComponent {
          this.filterFunction(value);
        }
      });
+
+     this.stockService.getCryptos().subscribe(async (data) => {
+      this.cryptos = data;
+      console.log(this.cryptos);
+     })
   }
 
   filterFunction(val: any) {

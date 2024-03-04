@@ -1,13 +1,12 @@
-
 <div class="main-div">
     <div class="heading">
         <div class="heading-items">
-            <input type="text" placeholder="Search Stocks" />    
+            <input type="text" placeholder="Search Crypto" />    
              <select class="filter" #filter (click)="filterFunction(filter.value)" [ngModel]="filterType"> 
                         <option default>{{filterType}}</option>
                         <option *ngFor="let sort of sortList" >{{sort}}</option>
             </select>
-           <div class="sort-stocks">
+           <div class="sort-crypto">
                 <button class="ascen" (click)="sortFunction('ascending')"> <fa-icon [icon]="faArrowUp"  [ngStyle]="{'color': sortType === 'ascending' ? 'green' : 'black'}"></fa-icon> </button>   
                 <button  class="desc" (click)="sortFunction('descending')"> <fa-icon [icon]="faArrowDown" [ngStyle]="{'color': sortType === 'descending' ? 'red' : 'black' }"></fa-icon> </button>  
             </div>
@@ -17,7 +16,7 @@
 
      <div class="temp"></div>
 
-     <div class="stocks-div">
+     <div class="crypto-div">
          <ng-container *ngFor="let AllStock of StocksList;  let i = index">
                      <div class="info">
                         <div class="info-head">

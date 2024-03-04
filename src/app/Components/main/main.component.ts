@@ -21,6 +21,9 @@ export class MainComponent implements OnInit {
   Nifty50 : any[] = [];
   WorstNifty50: any[] = [];
 
+  cryptosStats: any ;
+  coinsList: any[] = [];
+
   constructor(private stockService: StocksService) {}
   ngOnInit() {
     this.stockService.getStocks().subscribe(async (data) => {
@@ -38,6 +41,20 @@ export class MainComponent implements OnInit {
       this.Nifty50 = data;
       this.WorstNifty50 = [...data].reverse();
     } )
+
+    this.stockService.getCryptos().subscribe(async (data) => {
+      this.cryptosStats = data;
+      this.coinsList = data.data.coins;
+      console.log(this.coinsList);
+
+      this.coinsList.sort((a, b) => a.change - b.change);
+      this.Beststock = data;
+      data.reverse();
+      this.WorstStock = [...data].reverse();
+
+      console.log(this.Beststock);
+      console.log(this.WorstStock);
+     })
   }
 
   scrollLeft(ele : HTMLElement) {

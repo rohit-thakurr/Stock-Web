@@ -13,8 +13,9 @@ import { NewsComponent } from './Components/news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToBillionPipe } from './Pipes/to-billion.pipe';
 import { FormsModule } from '@angular/forms';
-import { NiftyComponent } from './Components/nifty/nifty.component';
 import { OverviewComponent } from './Components/overview/overview.component';
+import { CryptoComponent } from './Components/crypto/crypto.component';
+import { NumberFormatPipe } from './Pipes/number-format.pipe';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,10 @@ import { OverviewComponent } from './Components/overview/overview.component';
     StocksComponent,
     NewsComponent,
     ToBillionPipe,
-    NiftyComponent,
+    NumberFormatPipe,
     OverviewComponent,
+    CryptoComponent,
+    NumberFormatPipe,
   ],
   imports: [
     BrowserModule,

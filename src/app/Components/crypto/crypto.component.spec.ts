@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NiftyComponent } from './nifty.component';
+import { CryptoComponent } from './crypto.component';
 
-describe('NiftyComponent', () => {
-  let component: NiftyComponent;
-  let fixture: ComponentFixture<NiftyComponent>;
+describe('CryptoComponent', () => {
+  let component: CryptoComponent;
+  let fixture: ComponentFixture<CryptoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NiftyComponent]
+      declarations: [CryptoComponent]
     });
-    fixture = TestBed.createComponent(NiftyComponent);
+    fixture = TestBed.createComponent(CryptoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

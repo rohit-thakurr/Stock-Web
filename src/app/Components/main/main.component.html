@@ -1,6 +1,6 @@
 <div class="main-Div">
     <div class="heading">
-        <div class="heading-title"><b>Indian Stock Stats</b></div>
+        <div class="heading-title"><b>Global Crypto Stats</b></div>
     </div>
 
     <div class="temp"></div>
@@ -8,49 +8,49 @@
     <div class="stats">
         <div class="stats-row">
             <div class="stats-col">
-                <div class="col-title">Total Listed Companies</div>
-                <div class="col-value">3000</div>
+                <div class="col-title">Total Cryptocurrencies</div>
+                <div class="col-value">{{cryptosStats.data.stats.total | numberFormat }}</div>
             </div>
              <div class="stats-col">
                 <div class="col-title">Total Exchanges</div>
-                <div class="col-value">170</div>
+                <div class="col-value">{{cryptosStats.data.stats.totalExchanges }}</div>
              </div>
         </div>
 
          <div class="stats-row">
             <div class="stats-col">
                 <div class="col-title">Total Market Cap</div>
-                <div class="col-value">$4T</div>
+                <div class="col-value">{{cryptosStats.data.stats.totalMarketCap | toBillion}}</div>
             </div>
              <div class="stats-col">
-                <div class="col-title">Sensex</div>
-                <div class="col-value">71,334</div>
+                <div class="col-title">Total 24h Volume</div>
+                <div class="col-value">{{cryptosStats.data.stats.total24hVolume | toBillion}}</div>
              </div>
         </div>
 
          <div class="stats-row">
             <div class="stats-col">
-                <div class="col-title">Bank Nifty</div>
-                <div class="col-value">46,384.55</div>
+                <div class="col-title">Total Cryptocurrencies</div>
+                <div class="col-value">{{cryptosStats.data.stats.total | numberFormat}}</div>
             </div>
              <div class="stats-col">
-                <div class="col-title">Nifty 50</div>
-                <div class="col-value">22,040.70</div>
+                <div class="col-title">Total Markets</div>
+                <div class="col-value">{{cryptosStats.data.stats.totalMarkets |  numberFormat}}</div>
              </div>
         </div>
     </div>
 
-    <div class="stocks">
-        <div class="stocks-head">
-             <div class="stocks-title">Today's 10 Best Performing Stocks</div>
-             <div class="stocks-desc"  >
+    <div class="crypto">
+        <div class="crypto-head">
+             <div class="crypto-title">Today's 10 Best Performing Cryptos</div>
+             <div class="crypto-desc"  >
                 <a routerLink="/home/stocks" [queryParams]="{ key: 'Profit' }" > Show more </a>
             </div>
         </div>
 
-        <div class="stocks-body" >
+        <div class="crypto-body" >
             <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(BestStocks)" ></fa-icon></div>
-            <div class="stocks-info" #BestStocks>
+            <div class="crypto-info" #BestStocks>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -77,17 +77,17 @@
     
     </div>
 
-    <div class="stocks">
-        <div class="stocks-head">
-             <div class="stocks-title">Today's 10 Worst Performing Stocks</div>
-             <div class="stocks-desc"  >
+    <div class="crypto">
+        <div class="crypto-head">
+             <div class="crypto-title">Today's 10 Worst Performing Cryptos</div>
+             <div class="crypto-desc"  >
                 <a routerLink="/home/stocks" [queryParams]="{ key: 'Loss' }" > Show more </a>
             </div>
         </div>
 
-        <div class="stocks-body" >
+        <div class="crypto-body" >
             <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(LossStocks)" ></fa-icon></div>
-            <div class="stocks-info" #LossStocks>
+            <div class="crypto-info" #LossStocks>
                 <ng-container *ngFor="let item of items;  let i = index">
                      <div class="info">
                         <div class="info-head">
@@ -114,85 +114,7 @@
     
     </div>
 
-     <div class="stocks">
-        <div class="stocks-head">
-             <div class="stocks-title">Today's 10 Best Nifty50 Stocks</div>
-             <div class="stocks-desc"  >
-                <a routerLink="/home/stocks" > Show more </a>
-            </div>
-        </div>
-
-        <div class="stocks-body" >
-            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(BestNifty)" ></fa-icon></div>
-            <div class="stocks-info" #BestNifty>
-                <ng-container *ngFor="let item of items;  let i = index">
-                     <div class="info">
-                        <div class="info-head">
-                            <div class="info-name">{{i+1}}. {{ Nifty50[item+1]?.symbol.charAt(0).toUpperCase() + Nifty50[item+1]?.symbol.slice(1).toLowerCase()}}</div>
-                        </div>
-                        <div class="info-body">
-                            <div class="price" >
-                                <fa-icon [icon]="faRupeeSign" ></fa-icon>
-                                {{Nifty50[item+1]?.lastPrice}}
-                            </div>
-                            <div class="change"  [ngStyle]="{'color': Nifty50[item+1]?.pChange > 0 ? 'green' : 'red'}" >
-                                <fa-icon [icon]="faArrowUp" *ngIf="Nifty50[item+1]?.pChange > 0" ></fa-icon>
-                                <fa-icon [icon]="faArrowDown" *ngIf="Nifty50[item+1]?.pChange < 0" ></fa-icon>
-                                {{Nifty50[item+1]?.change}} ({{Nifty50[item+1]?.pChange}}%)
-                            </div>
-                            <div class="mkt">
-                                Market Cap: {{Nifty50[item+1]?.totalTradedValue | toBillion}}
-                            </div>
-                        </div>
-                     </div>
-                </ng-container>               
-            </div>    
-            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(BestNifty)"></fa-icon></div>                             
-        </div>
-
-        
-    
-    </div>
-
-     <div class="stocks">
-        <div class="stocks-head">
-             <div class="stocks-title">Today's 10 Worst Nifty50 Stocks</div>
-             <div class="stocks-desc"  >
-                <a routerLink="/home/stocks" > Show more </a>
-            </div>
-        </div>
-
-        <div class="stocks-body" >
-            <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(LossNifty)" ></fa-icon></div>
-            <div class="stocks-info" #LossNifty>
-                <ng-container *ngFor="let item of items;  let i = index">
-                     <div class="info">
-                        <div class="info-head">
-                            <div class="info-name">{{i+1}}. {{ WorstNifty50[item]?.symbol.charAt(0).toUpperCase() + WorstNifty50[item]?.symbol.slice(1).toLowerCase()}}</div>
-                        </div>
-                        <div class="info-body">
-                            <div class="price" >
-                                <fa-icon [icon]="faRupeeSign" ></fa-icon>
-                                {{WorstNifty50[item]?.lastPrice}}
-                            </div>
-                            <div class="change"  [ngStyle]="{'color': WorstNifty50[item]?.pChange > 0 ? 'green' : 'red'}" >
-                                <fa-icon [icon]="faArrowUp" *ngIf="WorstNifty50[item]?.pChange > 0" ></fa-icon>
-                                <fa-icon [icon]="faArrowDown" *ngIf="WorstNifty50[item]?.pChange < 0" ></fa-icon>
-                                {{WorstNifty50[item]?.change}} ({{WorstNifty50[item]?.pChange}}%)
-                            </div>
-                            <div class="mkt">
-                                Market Cap: {{WorstNifty50[item]?.totalTradedValue | toBillion}}
-                            </div>
-                        </div>
-                     </div>
-                </ng-container>               
-            </div> 
-            <div class="btn-right"><fa-icon [icon]="faAngleDoubleRight" class="arrow-right" (click)="scrollRight(LossNifty)"></fa-icon></div>                                
-        </div>
-
-        
-    
-    </div>
+   
 
     
 </div>

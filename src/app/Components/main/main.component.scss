@@ -68,7 +68,7 @@
     font-weight: 400;
 }
 
-.stocks{
+.crypto{
     height: 50vh;
     min-height: 50vh;
     display: flex;
@@ -79,7 +79,7 @@
 
 
 
-.stocks-head {
+.crypto-head {
     height: 8vh;
     min-height: 8vh;
     display: flex;
@@ -89,7 +89,7 @@
     background-color: rgb(229, 228, 226, 0.1);
 }
 
-.stocks-head > div{
+.crypto-head > div{
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -98,25 +98,25 @@
     margin-left: 6%;
 }
 
-.stocks-desc {
+.crypto-desc {
     margin-right: 6%;
 }
 
-.stocks-desc  a{
+.crypto-desc  a{
     text-decoration: none;
     font-weight: 500;
     color: rgb(16, 149, 202);
 }
 
-.stocks-desc a:hover{
+.crypto-desc a:hover{
     color: rgba(67, 192, 192);
 }
 
-.stocks-title {
+.crypto-title {
     font-weight: 500;
 }
 
-.stocks-body {
+.crypto-body {
     height: 42vh;
     max-height: 42vh;
     display: flex;
@@ -125,7 +125,7 @@
     justify-content: center;
 }
 
-.stocks-info {
+.crypto-info {
     height: 35vh;
     min-width: 90%;
     width: 90%;
@@ -137,7 +137,7 @@
 
 
 
-.stocks-info::-webkit-scrollbar {
+.crypto-info::-webkit-scrollbar {
     display: none;
 }
 
