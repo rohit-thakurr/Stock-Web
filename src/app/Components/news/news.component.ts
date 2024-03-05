@@ -10,7 +10,9 @@ import { NewsService } from 'src/app/Services/news.service';
 })
 export class NewsComponent implements OnInit{
   
- ListOfNews: any[] = [];
+  ListOfNews: any[] = [];
+  searchTerm: string = "CryptoCurrency";
+  search: string = "";
   constructor(private newsService: NewsService){}
 
   ngOnInit() {
@@ -19,7 +21,7 @@ export class NewsComponent implements OnInit{
       //   console.log(data);
       // })
 
-      this.newsService.getNewsCrypto().subscribe((data) => {
+      this.newsService.getNewsCrypto(this.searchTerm).subscribe((data) => {
         this.ListOfNews = data.articles;
         console.log(this.ListOfNews);
       })
@@ -32,5 +34,14 @@ export class NewsComponent implements OnInit{
     window.open(url, '_blank');
   }
 
+  searchNews() : void {
+    this.searchTerm = this.search;
+    console.log(this.searchTerm);
+
+    this.newsService.getNewsCrypto(this.searchTerm).subscribe((data) => {
+      this.ListOfNews = data.articles;
+      console.log(this.ListOfNews);
+    })
+  }
 
 }

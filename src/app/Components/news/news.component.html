@@ -1,7 +1,7 @@
 <div class="main-div">
     <div class="news-head">
         <div class="head-title"><b>Crypto News</b> </div>
-        <div class="news-search"><input type="text" placeholder="Search News" />  </div>
+        <div class="news-search"><input type="text" placeholder="Search News" [(ngModel)]="search" (keyup.enter)="searchNews()"/>  </div>
     </div>
 
     <div class="temp"></div>

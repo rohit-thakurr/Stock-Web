@@ -20,7 +20,7 @@ export class NewsService {
 //    return this.http.get<any>(`https://cryptocurrency-news2.p.rapidapi.com/v1/${paper}`,{headers});
 //  }
 
- getNewsCrypto(){
-  return this.http.get<any>("https://newsapi.org/v2/everything?q=CryptoCurrency&apiKey=eb0bf7aad2e24e5da84f3df77dc60162");
+ getNewsCrypto(search : string){
+  return this.http.get<any>(`https://newsapi.org/v2/everything?q=${search}&apiKey=eb0bf7aad2e24e5da84f3df77dc60162`);
  }
 }
