@@ -23,9 +23,13 @@ export class NewsComponent implements OnInit{
         this.ListOfNews = data.articles;
         console.log(this.ListOfNews);
       })
-    
+      
 
    
+  }
+
+  redirectToNewPage(url: string): void {
+    window.open(url, '_blank');
   }
 
 

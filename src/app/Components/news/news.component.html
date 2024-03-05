@@ -1,21 +1,31 @@
 <div class="main-div">
-    <div class="news-head"><b>Crypto News</b> </div>
+    <div class="news-head">
+        <div class="head-title"><b>Crypto News</b> </div>
+        <div class="news-search"><input type="text" placeholder="Search News" />  </div>
+    </div>
 
     <div class="temp"></div>
 
     <div class="news-div">
-        <div class="news-box"> 
-            <div class="news-image">
-                <div class="news-title"></div>
+
+        <ng-container *ngFor="let news of ListOfNews.slice(0,12);  let i = index">
+            <div class="news-box" (click)="redirectToNewPage(news.url)"> 
+                <div class="news-image" [ngStyle]="{'background-image': 'url(' + news.urlToImage + ')'}">
+                    <div class="news-title"><b>{{news.title |  slice:0:60}}... </b></div>
+                </div>
+    
+                <div class="news-details">
+                    <div class="news-desc">{{news.description |  slice:0:100 }}...</div>
+                    <div class="news-info">
+                        <div class="news-author"><b>{{news.author  }}</b></div>
+                        <div class="news-time"> {{news.publishedAt | date: 'MMM d,yy h:mm a'}} </div>
+                    </div>
+                </div>
             </div>
-            <div class="news-info"></div>
-        </div>
-        <div class="news-box">  </div>
-        <div class="news-box">  </div>
-        <div class="news-box">  </div>
-        <div class="news-box">  </div>
-        <div class="news-box">  </div>
-        <div class="news-box">  </div>
+        
+       
+        </ng-container>
+
     </div>
 </div>
 
