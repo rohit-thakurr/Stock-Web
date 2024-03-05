@@ -10,14 +10,18 @@ import { NewsService } from 'src/app/Services/news.service';
 })
 export class NewsComponent implements OnInit{
   
-  ListOfNewsNames: any[] = ["coindesk","cointelegraph","bitcoinist","decrypt","bsc","theguardian"];
-  ListOfNews: any[] = [];
+ ListOfNews: any[] = [];
   constructor(private newsService: NewsService){}
 
   ngOnInit() {
    
-      this.newsService.getNews('bsc').subscribe((data) => {
-        console.log(data);
+      // this.newsService.getNews('bsc').subscribe((data) => {
+      //   console.log(data);
+      // })
+
+      this.newsService.getNewsCrypto().subscribe((data) => {
+        this.ListOfNews = data.articles;
+        console.log(this.ListOfNews);
       })
     
 
