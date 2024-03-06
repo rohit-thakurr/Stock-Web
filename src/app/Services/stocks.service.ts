@@ -20,6 +20,19 @@ export class StocksService {
     return this.http.get<any>('https://coinranking1.p.rapidapi.com/coins',{headers,params});
   }
 
+  getCrypto(crypto: string) {
+    const headers = new HttpHeaders()
+    .set(
+      'X-RapidAPI-Key',
+      'b857b495b1mshc0678b0f3d55d62p178542jsn75927ebb5c45'
+    )
+    .set('X-RapidAPI-Host', 'coinranking1.p.rapidapi.com');
+
+    const params = new HttpParams().set('referenceCurrencyUuid', crypto);
+    return this.http.get<any>(`https://coinranking1.p.rapidapi.com/coin/${crypto}`,{headers,params});
+  }
+
+
   getNifty() {
     const headers = new HttpHeaders()
       .set(

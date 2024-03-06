@@ -15,7 +15,7 @@ export class OverviewComponent implements OnInit{
   img : string = "";
   btn: number = 1;
 
-  crypto: string = "yhjMzLPhuIDl";
+  crypto: string = "razxDUgYGNAdQ";
   time = "3h";
   coinPrice: any[] = [];
   coinTimestamp: any[] = [];
@@ -29,27 +29,21 @@ export class OverviewComponent implements OnInit{
 
     this.cryptoHistory.getCryptoHistory(this.crypto,this.time).subscribe((coinHistory)=> {
       this.coinsHistory = coinHistory.data.history;
-      
-      // // console.log(this.coinsHistory.map(history => history.price));
-      // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-      //   this.coinPrice.push(coinHistory?.data?.history[i].price);
-      // }
-
-      // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-      //   this.coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
-      // }
-      console.log(this.coinsHistory.map((row => new Date(row.timestamp).toLocaleDateString()) ));
       const ctx = this.chartElement.nativeElement;
       new Chart(ctx, {
         type: 'line',
         data: {
           labels: this.coinsHistory.map(row => new Date(row.timestamp).toLocaleDateString()),
           datasets: [{
-            label: 'Value',
+            label: 'Bitcoin',
             data: this.coinsHistory.map(row => row.price)
           }]
         }
       });
+
+      this.stockService.getCrypto(this.crypto).subscribe( (cryptoData) => {
+        console.log(cryptoData);
+      })
 
     })
 
