@@ -1,11 +1,14 @@
-
+<!-- <div *ngIf="isLoading;else loaded">loading</div>
+<ng-template #loaded> -->
 <div class="stocks-detail">
     <div class="stock-name">
         <div class="title"><b>Stock (Symbol) Price</b></div>
         <div>Stock live price in US Dollar (USD). View value statistics, market cap and supply.</div>
     </div>
-    <div class="stock-chart">
-        <img [src]="img" />
+    <div class="stock-chart" >
+        <!-- <img [src]="img" /> -->
+        <canvas id="acquisitions" #chart></canvas>
+       
     </div>
     <div class="stock-timeline">
         <button (click)="timeLine(1)" [ngClass]="{'selected': btn == 1, 'unselected': btn != 1}">Today</button>
@@ -14,3 +17,4 @@
     </div>
    
 </div>
+<!-- </ng-template> -->

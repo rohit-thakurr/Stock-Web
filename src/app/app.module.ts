@@ -17,6 +17,8 @@ import { OverviewComponent } from './Components/overview/overview.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { NumberFormatPipe } from './Pipes/number-format.pipe';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,7 @@ import { NumberFormatPipe } from './Pipes/number-format.pipe';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

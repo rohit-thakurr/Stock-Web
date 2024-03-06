@@ -5,9 +5,6 @@ import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class StocksService {
-  subscribe() {
-    throw new Error('Method not implemented.');
-  }
 
   constructor(private http: HttpClient) {}
 
