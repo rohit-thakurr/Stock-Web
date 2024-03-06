@@ -21,13 +21,12 @@ export class OverviewComponent implements OnInit{
   coinTimestamp: any[] = [];
   coinsHistory: any[] = [];
 
-  isLoading:boolean=true;
 
   constructor(private stockService: StocksService , private cryptoHistory : HistoryService){}
  
   ngOnInit(): void {
    
-   this.isLoading=true;
+
     this.cryptoHistory.getCryptoHistory(this.crypto,this.time).subscribe((coinHistory)=> {
       this.coinsHistory = coinHistory.data.history;
       
@@ -39,15 +38,14 @@ export class OverviewComponent implements OnInit{
       // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
       //   this.coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
       // }
-
-      this.isLoading=false;
+      console.log(this.coinsHistory.map((row => new Date(row.timestamp).toLocaleDateString()) ));
       const ctx = this.chartElement.nativeElement;
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: this.coinsHistory.map(row => new Date(row.time).toLocaleDateString()),
+          labels: this.coinsHistory.map(row => new Date(row.timestamp).toLocaleDateString()),
           datasets: [{
-            label: 'Acquisitions by year',
+            label: 'Value',
             data: this.coinsHistory.map(row => row.price)
           }]
         }
