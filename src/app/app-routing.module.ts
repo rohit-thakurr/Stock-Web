@@ -7,6 +7,8 @@ import { StocksComponent } from './Components/stocks/stocks.component';
 import { NewsComponent } from './Components/news/news.component';
 import { OverviewComponent } from './Components/overview/overview.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 const routes: Routes = [
   { path : 'home', 
@@ -16,10 +18,12 @@ const routes: Routes = [
       {path: 'stocks', component: StocksComponent},
       {path: 'crypto', component: CryptoComponent},
       {path: 'news', component: NewsComponent},
-      {path: 'overview', component: OverviewComponent},
+      {path: 'overview/:id', component: OverviewComponent},
       {path: '', redirectTo:'main', pathMatch: 'full'}
   ] },
 
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
   {path: '', redirectTo: 'home',pathMatch:'full'},
   {path : 'error', component: ErrorComponent },
   {path: '**', redirectTo:'error'}

@@ -1,7 +1,8 @@
 import { Component, OnInit,ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { HistoryService } from 'src/app/Services/history.service';
 import { StocksService } from 'src/app/Services/stocks.service';
-import Chart from 'chart.js/auto'
+import { ActivatedRoute } from '@angular/router';
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-overview',
@@ -22,13 +23,18 @@ export class OverviewComponent implements OnInit{
   coinsHistory: any[] = [];
 
 
-  constructor(private stockService: StocksService , private cryptoHistory : HistoryService){}
+  constructor(private stockService: StocksService , private cryptoHistory : HistoryService,private route: ActivatedRoute){}
  
   ngOnInit(): void {
    
+    this.route.queryParams.subscribe(params => {
+      this.crypto = params['crypto'];
+      console.log(this.crypto); 
+    });
 
     this.cryptoHistory.getCryptoHistory(this.crypto,this.time).subscribe((coinHistory)=> {
       this.coinsHistory = coinHistory.data.history;
+      console.log(this.coinsHistory.map(coin => new Date(coin.timestamp).toLocaleDateString()));
       const ctx = this.chartElement.nativeElement;
       new Chart(ctx, {
         type: 'line',

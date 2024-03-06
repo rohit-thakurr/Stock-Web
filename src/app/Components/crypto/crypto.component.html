@@ -18,7 +18,7 @@
 
      <div class="crypto-div">
          <ng-container *ngFor="let AllStock of CryptosList;  let i = index">
-                     <div class="info">
+                     <div class="info" (click)="redirectToCrypto(i,AllStock.uuid)">
                         <div class="info-head">
                             <div class="info-name">{{i+1}}. {{ AllStock?.name.charAt(0).toUpperCase() + AllStock?.name.slice(1).toLowerCase()}}</div>
                             <div class="crypto-img"><img [src]="AllStock?.iconUrl"/></div>

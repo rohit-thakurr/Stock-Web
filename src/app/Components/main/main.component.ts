@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { StocksService } from 'src/app/Services/stocks.service';
-import { faIndianRupee, faArrowDown, faArrowUp,  faAngleDoubleLeft, faAngleDoubleRight, faDollarSign} from '@fortawesome/free-solid-svg-icons';
-
+import { faIndianRupee, faArrowDown, faArrowUp,  faAngleDoubleLeft, faAngleDoubleRight, faDollarSign,faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   faAngleDoubleLeft = faAngleDoubleLeft;
   faAngleDoubleRight = faAngleDoubleRight;
   faDollarSign = faDollarSign;
+  faUserCircle = faUserCircle;
 
   Beststock: any[] = [];
   WorstStock: any[] = [];
@@ -27,34 +28,18 @@ export class MainComponent implements OnInit {
   BestCrypto: any[]=[];
   WorstCrypto: any[]=[];
 
-  constructor(private stockService: StocksService) {}
+  constructor(private stockService: StocksService, private router: Router) {}
   ngOnInit() {
-    // this.stockService.getStocks().subscribe(async (data) => {
-    //   data.sort((a, b) => a.pChange - b.pChange);
-    //   this.Beststock = data;
-    //   data.reverse();
-    //   this.WorstStock = [...data].reverse();
-    // });
-
-    // this.stockService.getNifty().subscribe(async (data) => {
-    //   console.log(data);
-    //   this.Nifty50 = data;
-    //   this.WorstNifty50 = [...data].reverse();
-    // } )
 
     this.stockService.getCryptos().subscribe(async (data) => {
       this.cryptosStats = data;
       this.coinsList = data.data.coins;
-      //console.log(this.coinsList);
 
       this.coinsList.sort((a, b) => a.change - b.change);
-      //console.log(this.coinsList);
       this.BestCrypto = this.coinsList;
       this.coinsList.reverse();
       this.WorstCrypto = [...this.coinsList].reverse();
-
-      // console.log(this.BestCrypto);
-      // console.log(this.WorstCrypto);
+     
      })
   }
 
@@ -65,4 +50,10 @@ export class MainComponent implements OnInit {
   scrollRight(ele : HTMLElement){
     ele.scrollLeft += 100;
   }
+  
+  redirectToCrypto(index: number,cryptoName: string) {
+    this.router.navigate(['/home/overview', index], { queryParams: { crypto: cryptoName } });
+    console.log(crypto);
+}
+  
 }

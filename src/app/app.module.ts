@@ -12,10 +12,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewsComponent } from './Components/news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToBillionPipe } from './Pipes/to-billion.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OverviewComponent } from './Components/overview/overview.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { NumberFormatPipe } from './Pipes/number-format.pipe';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 
 
@@ -33,6 +35,8 @@ import { NumberFormatPipe } from './Pipes/number-format.pipe';
     OverviewComponent,
     CryptoComponent,
     NumberFormatPipe,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ import { NumberFormatPipe } from './Pipes/number-format.pipe';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

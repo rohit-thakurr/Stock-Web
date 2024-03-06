@@ -1,0 +1,125 @@
+.login-div {
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-container {
+    height: 42vh;
+    width: 28%;
+    border: 1px solid black;
+    margin-top: 5%;
+    border-radius: 5px;
+}
+
+.login-head {
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 1.3rem;
+}
+
+.login-form {
+    height: 29vh;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.input-field {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 85%;
+    height: 65%;
+    border-radius: 8px;
+    padding-left: 1rem;
+}
+
+.form-ForgotPassword{
+    width: 100%;
+    height: 5vh;
+    border: 1px solid red;
+    padding-left: 1.4rem;
+    padding-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 100%;
+    height: 6vh;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button > button {
+    width: 90%;
+    height: 70%;
+    border-radius: 8px;
+}
+
+.Signup-box {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px soild red;
+}
+
+.Social-MediaLogin{
+    height: 7vh;
+    max-height: 7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px soild rgb(60, 143, 60);
+}
+
+.social-mediaDiv{
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+a{
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+a > img {
+    max-height: 80%;
+    height: 80%;
+    max-width: 77%;
+    width: 77%;
+    border-radius: 50%;
+}

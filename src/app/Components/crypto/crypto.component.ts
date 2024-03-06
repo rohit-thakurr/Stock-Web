@@ -6,7 +6,7 @@ import {
   faDollarSign
 } from '@fortawesome/free-solid-svg-icons';
 import { StocksService } from 'src/app/Services/stocks.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -37,7 +37,7 @@ export class CryptoComponent {
   CryptosList: any[] = [];
 
 
-  constructor(private stockService: StocksService, private route: ActivatedRoute) {}
+  constructor(private stockService: StocksService, private route: ActivatedRoute, private router: Router) {}
   ngOnInit() {
 
      this.route.queryParams.subscribe((params) => {
@@ -87,4 +87,9 @@ export class CryptoComponent {
       this.CryptosList.sort((a, b) => b.change - a.change);
     }
   }
+
+  redirectToCrypto(index: number,cryptoName: string) {
+    this.router.navigate(['/home/overview', index], { queryParams: { crypto: cryptoName } });
+    console.log(crypto);
+}
 }

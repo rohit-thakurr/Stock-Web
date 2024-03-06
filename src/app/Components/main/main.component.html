@@ -1,6 +1,7 @@
 <div class="main-Div">
     <div class="heading">
         <div class="heading-title"><b>Global Crypto Stats</b></div>
+        <div class="account"><a routerLink="/login"><fa-icon [icon]="faUserCircle"  style='font-size:3rem ;color:rgb(0, 21, 41,0.9)'></fa-icon></a></div>
     </div>
 
     <div class="temp"></div>
@@ -52,7 +53,7 @@
             <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(BestCryptos)" ></fa-icon></div>
             <div class="crypto-info" #BestCryptos>
                 <ng-container *ngFor="let item of items;  let i = index">
-                     <div class="info">
+                     <div class="info" (click)="redirectToCrypto(i,BestCrypto[item].uuid)">
                         <div class="info-head">
                             <div class="info-name">{{i+1}}. {{ BestCrypto[item]?.name.charAt(0).toUpperCase() + BestCrypto[item]?.name.slice(1).toLowerCase()}}</div>
                             <div class="crypto-img"><img [src]="BestCrypto[item]?.iconUrl"/></div>
@@ -92,7 +93,7 @@
             <div class="btn-right"><fa-icon [icon]="faAngleDoubleLeft" class="arrow-left" (click)="scrollLeft(LossStocks)" ></fa-icon></div>
             <div class="crypto-info" #LossStocks>
                 <ng-container *ngFor="let item of items;  let i = index">
-                     <div class="info">
+                     <div class="info" (click)="redirectToCrypto(i,BestCrypto[item].uuid)">
                         <div class="info-head">
                             <div class="info-name">{{i+1}}. {{ WorstCrypto[item]?.name.charAt(0).toUpperCase() + WorstCrypto[item]?.name.slice(1).toLowerCase()}}</div>
                             <div class="crypto-img"><img [src]="WorstCrypto[item]?.iconUrl"/></div>
