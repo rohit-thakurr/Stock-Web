@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faUserAlt, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,9 @@ export class LoginComponent implements OnInit{
 
   public loginForm!: FormGroup;
   type: string = 'password';
+  faUserAlt = faUserAlt;
+  faEyeSlash = faEyeSlash;
+
   constructor( private fb: FormBuilder){};
 
   ngOnInit() {
@@ -20,6 +25,7 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit() {   
+    console.log(this.loginForm.value);
   }
 
   hideShowPass(){}

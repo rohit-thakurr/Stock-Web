@@ -1,0 +1,89 @@
+.login-div {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('https://images.pexels.com/photos/6765705/pexels-photo-6765705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+
+.login-container {
+    height: 55vh;
+    width: 28%;
+    border: 1px solid black;
+    margin-top: 10%;
+    border-radius: 9px;
+    background-color: rgb(245, 241, 241,0.85);
+    border: none;
+}
+
+.login-head {
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 1.3rem;
+}
+
+.login-form {
+    height: 34vh;
+    width: 100%;
+  
+}
+
+.input-field {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.input-icon{
+    position: absolute;
+    left: 1rem; 
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+}
+
+input {
+    width: 80%;
+    height: 65%;
+    border-radius: 8px;
+    padding-left: 2.4rem;
+    border: 1px solid grey;
+}
+
+
+
+.button {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button > button {
+    width: 90%;
+    height: 70%;
+    border-radius: 8px;
+    background-color: rgb(21, 132, 176);
+    color: white;
+}
+
+
