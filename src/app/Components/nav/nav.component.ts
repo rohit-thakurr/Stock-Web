@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faDollarSign , faLeaf, faHome, faNewspaper} from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign , faLeaf, faHome, faNewspaper, faBriefcase} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -11,6 +11,7 @@ export class NavComponent {
   faDollarSign = faDollarSign;
   faLeaf = faLeaf;
   faNewspaper = faNewspaper;
+  faBriefcase = faBriefcase;
 
   isSpecial: any = true;
 

@@ -18,6 +18,7 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
 import { NumberFormatPipe } from './Pipes/number-format.pipe';
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
+import { HoldingsComponent } from './Components/holdings/holdings.component';
 
 
 
@@ -37,6 +38,7 @@ import { SignupComponent } from './Components/signup/signup.component';
     NumberFormatPipe,
     LoginComponent,
     SignupComponent,
+    HoldingsComponent,
   ],
   imports: [
     BrowserModule,
