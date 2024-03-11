@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  faSearch, faBell, faCommentAlt,faUserCircle
+  faSearch, faBell, faCommentAlt,faUserCircle,faLandmark
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -14,4 +14,5 @@ export class HoldingsComponent {
   faBell = faBell;
   faCommentAlt = faCommentAlt;
   faUserCircle = faUserCircle;
+  faLandmark = faLandmark;
 }
