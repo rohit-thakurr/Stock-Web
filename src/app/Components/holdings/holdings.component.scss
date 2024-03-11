@@ -139,5 +139,42 @@
 .money-head {
     height: 12vh;
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.money-infoName{
+    width: 16vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.money-type {
+    border: 1px solid black;
+    margin-left: -20px;
+    font-size: 1rem;
+}
+
+.money-pChange{
+    width: 12vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding-top: 2vh;
+}
+
+.change{
+    border: 1px solid black;
+    height: 3vh;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
