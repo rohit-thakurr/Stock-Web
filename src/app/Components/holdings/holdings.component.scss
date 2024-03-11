@@ -145,7 +145,7 @@
 }
 
 .money-infoName{
-    width: 16vh;
+    width: 45%;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -177,4 +177,26 @@
     align-items: center;
     border-radius: 8px;
     font-size: 0.8rem;
+}
+
+.money-value{
+    height: 12vh;
+    max-height: 12vh;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.6rem;
+    border: 1px solid black;
+}
+
+.money-bottom{
+    height: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.6rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    border: 1px solid black;
 }
