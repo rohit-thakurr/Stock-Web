@@ -12,7 +12,7 @@
     height: 12vh;
     font-size: 2rem;
    // border-bottom: 1px solid rgb(229, 228, 226,0.6);
-    background-color: rgb(229, 228, 226, 0.6);
+    background-color: rgb(229, 228, 226, 0.2);
     position: fixed;
     top: 0;
     width: 88%;
@@ -28,13 +28,13 @@
 .temp {
     height: 12vh;
     min-height: 12vh;
-    background-color: rgb(229, 228, 226, 0.6);
+    background-color: rgb(229, 228, 226, 0.2);
 }
 
 .search-box{
-    margin-left: 3%;
-    height: 8vh;
-    width: 18%;
+    margin-left: 4.5%;
+    height: 7vh;
+    width: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -45,7 +45,7 @@
 
 .search-icon{
     position: absolute;
-    top: 1.2rem;
+    top: 1rem;
     left: 0.8rem;
 }
 
@@ -64,7 +64,7 @@
     margin-right: 13%;
     display: flex;
     flex-direction: row-reverse;
-    background-color: rgb(229, 228, 226, 0.6);
+    background-color: rgb(229, 228, 226, 0.2);
 }
 
 .user-info {
@@ -121,32 +121,36 @@
 }
 
 .dashboard{
-    height: 35vh;
+    height: 36vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+   // justify-content: center;
     align-items: center;
-    border: 1px solid black;
 }
 
 .money-info {
-    height: 28vh;
+    height: 26vh;
+    max-height: 26vh;
     width: 25%;
     margin-left: 5%;
+    color: white;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .money-head {
-    height: 12vh;
-    border: 1px solid black;
+    height: 14vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .money-infoName{
-    width: 45%;
-    border: 1px solid black;
+    width: 55%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -154,22 +158,27 @@
     font-size: 1.2rem;
 }
 
+.iconInfo{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
 .money-type {
-    border: 1px solid black;
-    margin-left: -20px;
+    margin-left: -22px;
     font-size: 1rem;
 }
 
 .money-pChange{
     width: 12vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     padding-top: 2vh;
 }
 
 .change{
-    border: 1px solid black;
     height: 3vh;
     width: 40%;
     display: flex;
@@ -180,23 +189,104 @@
 }
 
 .money-value{
-    height: 12vh;
-    max-height: 12vh;
+    height: 8vh;
+    max-height: 8vh;
     font-size: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 0.6rem;
-    border: 1px solid black;
+    padding-left: 1rem;
 }
 
 .money-bottom{
     height: 4vh;
+    min-height: 4vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.6rem;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.crypto-div{
+    height: 52vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crypto-list{
+    height: 45vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.crypto-list-head{
+    height: 10vh;
+    width: 103%;
     border: 1px solid black;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgb(0, 21, 41,0.7);
+    color: white;
+}
+
+.crypto-scroll{
+    height: 32vh;
+    max-height: 32vh;
+    overflow: auto;
+    width: 100%;
+    margin-top: 1vh;
+}
+
+.list-item{
+    height: 5vh;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item:nth-child(5) {
+    width: 20%
+  }
+
+.crypto-list-body{
+    height: 5vh;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1vh;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 1rem;
+}
+
+
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.actions > button{
+    width: 35%;
+    height: 3.5vh;
+    border-radius: 5px;
 }

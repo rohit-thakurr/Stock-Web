@@ -20,13 +20,13 @@
 
     <div class="dashboard">
         
-        <div class="money-info">
-            <div class="money-head"> 
+        <div class="money-info" style="background-color: rgb(106, 173, 236);">
+            <div class="money-head" > 
                 <div class="money-infoName">
-                    <div><fa-icon [icon]="faLandmark"  style="font-size:2.2rem" ></fa-icon></div>
+                    <div style="background-color: white; height: 8vh; max-height: 8vh;" class="iconInfo"><fa-icon [icon]="faWallet"  style="font-size:3rem;  color: rgb(85, 162, 233);" ></fa-icon></div>
                     <div class="money-type">Balance</div>
                 </div>
-                <div class="money-pChange"><div class="change">12%</div></div>
+                <div class="money-pChange"><div class="change">  <fa-icon [icon]="faArrowUp" ></fa-icon>12%</div></div>
             </div>
             <div class="money-value">$33,000</div>
             <div class="money-bottom">
@@ -34,7 +34,64 @@
                 <div>More -></div>
             </div>
         </div>
-        <div class="money-info"></div>
-        <div class="money-info"></div>
+
+        
+        <div class="money-info" style="background-color: rgb(199, 141, 32); color: black">
+            <div class="money-head" > 
+                <div class="money-infoName">
+                    <div style="background-color: white; height: 8vh; max-height: 8vh;" class="iconInfo"><fa-icon [icon]="faLandmark"  style="font-size:3rem; color: rgb(199, 141, 32);" ></fa-icon></div>
+                    <div class="money-type">Current</div>
+                </div>
+                <div class="money-pChange"><div class="change">  <fa-icon [icon]="faArrowUp" ></fa-icon>12%</div></div>
+            </div>
+            <div class="money-value">$14,597</div>
+            <div class="money-bottom">
+                <div>+$1200 from last month</div>
+                <div>More -></div>
+            </div>
+        </div>
+
+       <div class="money-info" style="background-color: rgb(175, 119, 175);">
+            <div class="money-head" > 
+                <div class="money-infoName">
+                    <div style="background-color: white; height: 8vh; max-height: 8vh;" class="iconInfo"><fa-icon [icon]="faBalanceScale"  style="font-size:3rem; color: rgb(175, 119, 175);" ></fa-icon></div>
+                    <div class="money-type">Profit</div>
+                </div>
+                <div class="money-pChange"><div class="change">  <fa-icon [icon]="faArrowUp" ></fa-icon>12%</div></div>
+            </div>
+            <div class="money-value">$33,000</div>
+            <div class="money-bottom">
+                <div>+$1200 from last month</div>
+                <div>More -></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="crypto-div">
+        <div class="crypto-list">
+            <div class="crypto-list-head">
+                <div class="list-item">CryptoCurrency</div>
+                <div class="list-item">Last Transaction </div>
+                <div class="list-item">Current Value</div>
+                <div class="list-item">Profit/Loss</div>
+                <div class="list-item">Actions</div>
+            </div>
+
+            <div class="crypto-scroll">
+                <ng-container *ngFor="let item of itemList">
+                    <div class="crypto-list-body">
+                        <div class="list-item">BitCoin</div>
+                        <div class="list-item">12/02/24 </div>
+                        <div class="list-item">$1,234</div>
+                        <div class="list-item">$52</div>
+                        <div class="list-item actions">
+                            <button style="color:white; background-color: green;"> Buy</button>
+                            <button style="color:white; background-color: red;">Sell</button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+           
+        </div>
     </div>
 </div>
