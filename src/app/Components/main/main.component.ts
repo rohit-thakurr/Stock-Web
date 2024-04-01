@@ -44,11 +44,11 @@ export class MainComponent implements OnInit {
   }
 
   scrollLeft(ele : HTMLElement) {
-    ele.scrollLeft -= 100;
+    ele.scrollLeft -= 300;
   }
 
   scrollRight(ele : HTMLElement){
-    ele.scrollLeft += 100;
+    ele.scrollLeft += 300;
   }
   
   redirectToCrypto(index: number,cryptoName: string) {

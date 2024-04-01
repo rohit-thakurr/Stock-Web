@@ -21,6 +21,7 @@ export class OverviewComponent implements OnInit{
   coinPrice: any[] = [];
   coinTimestamp: any[] = [];
   coinsHistory: any[] = [];
+  coin: any = {};
 
 
   constructor(private stockService: StocksService , private cryptoHistory : HistoryService,private route: ActivatedRoute){}
@@ -48,7 +49,8 @@ export class OverviewComponent implements OnInit{
       });
 
       this.stockService.getCrypto(this.crypto).subscribe( (cryptoData) => {
-        console.log(cryptoData);
+        this.coin = cryptoData.data.coin;
+        console.log(this.coin);
       })
 
     })
