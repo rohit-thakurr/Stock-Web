@@ -121,24 +121,32 @@
 }
 
 .dashboard{
-    height: 32vh;
+    height: 28vh;
     display: flex;
     flex-direction: row;
    // justify-content: center;
     align-items: center;
+    //border: 1px solid black;
 }
 
 .money-info {
     height: 22vh;
     max-height: 22vh;
     width: 25%;
-    margin-left: 5%;
+    margin-left: 6%;
     color: white;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     border-radius: 10px;
+}
+
+.money-info:hover {
+    height: 24vh;
+    max-height: 24vh;
+    width: 27%;
+    margin-left: 4%;
 }
 
 .money-head {
@@ -210,6 +218,24 @@
     border-radius: 0px 0px 10px 10px;
 }
 
+.crypto-filter{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.filter-head{
+    border: 1px solid black;
+}
+
+.filter-options{
+    
+}
+
 .crypto-div{
     height: 56vh;
     display: flex;
@@ -229,15 +255,15 @@
 }
 
 .crypto-list-head{
-    height: 8vh;
-    width: 103%;
+    height: 6vh;
+    width: 100%;
     border: 1px solid black;
     border-radius: 7px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     background-color: rgb(0, 21, 41,0.7);
     color: white;
@@ -266,11 +292,12 @@
 
 .crypto-list-body{
     height: 5vh;
-    width: 97%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    box-sizing: border-box;
     font-size: 1rem;
     font-weight: 500;
     margin-top: 1.2vh;
